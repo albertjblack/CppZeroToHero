@@ -21,8 +21,7 @@ int main(int argc, char *argv[]){
 
  size_t total {1}, lim_idx {0};
  while(total <= 2 * N - 1){
-  temp = user_input.substr(0,lim_idx+1);
-  temp += reversed_input.substr(N-lim_idx,lim_idx);
+  temp = user_input.substr(0,lim_idx+1) + reversed_input.substr(N-lim_idx,lim_idx);
   string spaces (N-lim_idx, ' ');
   cout << spaces << temp << endl;
   lim_idx += 1;
