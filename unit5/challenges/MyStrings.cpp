@@ -8,18 +8,18 @@ member::MyString2 & member::MyString2::operator-() const {
     buff[i] = std::tolower(buff[i]);
   }
 
-  MyString2 * tmp = new MyString2{buff};
+  member::MyString2 tmp {buff};
   delete [] buff;
-  return *tmp;
+  return tmp;
 }
 
 member::MyString2 & member::MyString2::operator+(const MyString2 & rhs) const {
   char * buff = new char[strlen(str)+strlen(rhs.str)+1];
   strcpy(buff,str);
   strcat(buff,rhs.str);
-  MyString2 * tmp = new MyString2{buff};
+  MyString2 tmp {buff};
   delete [] buff;
-  return *tmp;
+  return tmp;
 }
 
 member::MyString2 & member::MyString2::operator*(const int & rhs) const{
@@ -28,9 +28,10 @@ member::MyString2 & member::MyString2::operator*(const int & rhs) const{
   for (size_t i {0}; i<rhs; i++){
     strcat(buff,str);
   }
-  MyString2 * tmp = new MyString2{buff};
+  MyString2 tmp {buff};
   delete [] buff;
-  return *tmp;
+  return tmp;
+
 }
 
 member::MyString2 & member::MyString2::operator=(const MyString2 & rhs){
@@ -80,10 +81,10 @@ bool member::MyString2::operator>(const MyString2 & rhs) const {
 
 member::MyString2 member::MyString2::operator+=(const MyString2 & rhs){
   *this = *this + rhs;
-
+  return *this;
 }
 
-member::MyString2 member::MyString2::operator*=(const int & rhs){
-  *this = *this * rhs;
-
+member::MyString2 member::MyString2::operator*=(const int & n){
+  *this = *this * n;
+  return *this;
 }
