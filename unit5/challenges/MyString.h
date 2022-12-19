@@ -7,7 +7,7 @@ class MyString{
   friend std::ostream & operator<<(std::ostream &lhs, const MyString &rhs);
   friend std::istream & operator>>(std::istream &lhs, MyString &rhs);
 
-  private:
+  protected:
     char * str;
   
   public:

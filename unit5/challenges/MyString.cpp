@@ -33,4 +33,3 @@ MyString::~MyString(){
 void MyString::display() const{
   printf("<MyString | str:%s, len:%d>",str,static_cast<int>(strlen(str)));
 }
-

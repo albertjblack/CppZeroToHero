@@ -16,7 +16,7 @@ Section 14 - Opertator Overloading
 '+=' equivalent to s1 = s1 + s2 // return a ref -> no extra copies
 '*=' equivalent to -> if s1 "abc" and s1 *=4 -> s1 = "abc" 5 times // return a ref -> no extra copies
 
-'++' pre and post increment // pre returns by reference and has no parameter -> return *this // all char upper case
+'++' pre and post increment // pre returns by reference and has no parameter -> return *this // all char upper case // pre makes first, then assigns
 '--' pre and post decrement // post returns by value and has an int parameter -> return tmp // all char lower case
 
 '<<' insertion
@@ -25,17 +25,9 @@ Section 14 - Opertator Overloading
 # the pre increment {do whatever you need; return *this}
 # the post increment {M tmp {*thi}; operator++(); return tmp;}
 
-
 */
 
 int main(int argc, char * argv[]){
   return 0;
 }
 
-namespace members {
-
-}
-
-namespace non_members {
-
-}
