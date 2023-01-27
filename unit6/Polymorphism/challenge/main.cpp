@@ -6,64 +6,21 @@ int main(int argc, char * argv[]){
   std::cout.precision(2);
   std::cout << std::fixed;
 
-  // account
-  // vector<Account> accounts; 
-  // accounts.push_back(Account{});
-  // accounts.push_back(Account{"Pepe",110});
-  // accounts.push_back(Account{"Fer", 110});
-  // accounts.push_back(Account{"Chema", 50});
+  Account *p1 = new Checking_Account("Larry", 10000);
+  Account *p2 = new Savings_Account("Jarry", 100000,2.3);
+  Account *p3 = new Trust_Account("Harry", 1000000, 2.5);
+  
+  vector<Account *> accs {p1, p2, p3};
 
-  // display(accounts);
-  // deposit(accounts,1.68);
-  // withdraw(accounts,2.0);
-  // display(accounts);
+  display(accs);
+  withdraw(accs, 20000);
+  deposit(accs, 899);
 
+  display(accs);
 
-  Account *ptr = new Trust_Account("Leo", 500000000000000, 2.710);
-  std::cout << *ptr << std::endl;
-  // ^^ this will say Account and not Trust_Account 
-
-  std::cout << std::endl;
-  std::cout << std::endl;
-
-  // savings
-  vector<Savings_Account> savings_accounts;
-  savings_accounts.push_back(Savings_Account{}); 
-  savings_accounts.push_back(Savings_Account{"Pepe", 210}); 
-  savings_accounts.push_back(Savings_Account{"Fer", 210});
-  savings_accounts.push_back(Savings_Account{"Chema", 205});
-
-  display(savings_accounts);
-  deposit(savings_accounts,1.68);
-  withdraw(savings_accounts,2.0);
-  display(savings_accounts);
-
-  // checking
-  vector<Checking_Account> checking_accounts;
-  checking_accounts.push_back(Checking_Account{}); 
-  checking_accounts.push_back(Checking_Account{"Pepe", 210}); 
-  checking_accounts.push_back(Checking_Account{"Fer", 210});
-  checking_accounts.push_back(Checking_Account{"Chema", 205});
-
-  display(checking_accounts);
-  deposit(checking_accounts,1.68);
-  withdraw(checking_accounts,2.0);
-  display(checking_accounts);
-
-  // trust
-  vector<Trust_Account> trust_accounts;
-  trust_accounts.push_back(Trust_Account{}); 
-  trust_accounts.push_back(Trust_Account{"Pepe", 210}); 
-  trust_accounts.push_back(Trust_Account{"Fer", 210});
-  trust_accounts.push_back(Trust_Account{"Chema", 205});
-
-  display(trust_accounts);
-  deposit(trust_accounts,50000);
-  withdraw(trust_accounts,2.0);
-  withdraw(trust_accounts,2.0);
-  withdraw(trust_accounts,2.0);
-  withdraw(trust_accounts,2.0);
-  display(trust_accounts);
+  delete p1;
+  delete p2;
+  delete p3;
 
   return 0;
 }
